@@ -1,0 +1,11 @@
+[Unit]
+Description=V4L2 Loopback
+
+[Service]
+Type=simple
+RemainAfterExit=yes
+ExecStart=#modprobe_location# v4l2loopback card_label='Immersed Cam' video_nr=#video_device# exclusive_caps=1
+ExecStop=#rmmod_location# v4l2loopback
+
+[Install]
+WantedBy=default.target
