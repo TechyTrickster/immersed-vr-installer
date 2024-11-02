@@ -40,7 +40,7 @@ cat ../config/serviceFile.service | sed "s|#modprobeLocation#|$modProbeLocation|
 cat ../config/temp.service
 echo ""
 #update immersed config file
-cat $pathToImmersedConfig | sed "s|/dev/video7|$videoDeviceName|g" > $pathToImmersedTempConfig
+cat $pathToImmersedConfig | sed "s|/dev/video.|$videoDeviceName|g" > $pathToImmersedTempConfig
 echo ""
 cat $pathToImmersedTempConfig
 echo ""
