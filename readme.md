@@ -16,3 +16,7 @@ If you're interested in shipping this script, just get in touch.  I'll be happy 
 
 ### Inspiration and Basis of Methods
 In order to actually create this script, I followed a well put together guide (found here: [original guide](https://richarddecal.com/posts/Immersed-VR-Ubuntu/2024-02-01-immersed-vr-ubuntu.html)) by Richard Decal.  The guide didn't quite work in practice on my machine due to some OS implementation detail differences (for instance our modprobe executables are in different locations).  In order to smooth over those differences, I created some more dynamic bash code to fill in the gaps, along with of course automating the whole process!  So thank you to Richard Decal for putting together such a concise guide!
+
+
+### Warning and Disclaimer
+I have only tested this on one of my machines, so far.  While it did work, and I'm reasonably sure this won't hose *your* machine even if it doesn't, I refuse to make any promise.  Use this script at your own risk, as I make no claim of warrenty or fitness for purpose.
