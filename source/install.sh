@@ -58,4 +58,6 @@ sudo systemctl start v4l2loopback
 #change to original directory
 cd "$ogDir"
 #reboot
+echo "you MAY need to reboot your system in order for the immersed web cam to become available."
+#TODO: make the script PROMPT the user to reboot
 #reboot
