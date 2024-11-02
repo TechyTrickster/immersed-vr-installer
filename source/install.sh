@@ -6,7 +6,7 @@ scriptDir=$( dirname -- "$( readlink -f -- "$0"; )"; ) #more durable than dirnam
 #cd to script directory
 cd "$scriptDir"
 #download immersed client
-#wget https://static.immersed.com/dl/Immersed-x86_64.AppImage
+wget https://static.immersed.com/dl/Immersed-x86_64.AppImage
 #set client as executable
 chmod +x Immersed-x86_64.AppImage
 #set icon for client
@@ -19,7 +19,7 @@ echo "log into / create your immersed account and thene close the app once finis
 pathToImmersedConfig="/home/$USER/.ImmersedConf"
 pathToImmersedTempConfig="../config/temp.conf"
 #install v4l2loopback packages
-#sudo apt install v4l2loopback-dkms v4l2loopback-utils
+sudo apt install v4l2loopback-dkms v4l2loopback-utils
 #find modprobe
 modProbeLocation=$(whereis modprobe -b | sed 's/.*://g' | sed -e 's/^[[:space:]]*//g' | sed -e 's/[ \t].*//g') 
 #find rmmod
@@ -44,18 +44,18 @@ cat $pathToImmersedConfig | sed "s|/dev/video.|$videoDeviceName|g" > $pathToImme
 echo ""
 cat $pathToImmersedTempConfig
 echo ""
-#cp $pathToImmersedTempConfig $pathToImmersedConfig
+cp $pathToImmersedTempConfig $pathToImmersedConfig
 #delete temp config file
-#rm $pathToImmersedTempConfig
+rm $pathToImmersedTempConfig
 #move service file to systemd folder
-#sudo cp ../config/temp.service /etc/systemd/system/v4l2loopback.service
+sudo cp ../config/temp.service /etc/systemd/system/v4l2loopback.service
 # #delete temp file
-# rm ./config/temp.service
-# #enable new service
-# sudo systemctl enable v4l2loopback
-# #start new service
-# sudo systemctl start v4l2loopback
-# #change to original directory
-# cd "$ogDir"
-# #reboot
-# reboot
+rm ../config/temp.service
+#enable new service
+sudo systemctl enable v4l2loopback
+#start new service
+sudo systemctl start v4l2loopback
+#change to original directory
+cd "$ogDir"
+#reboot
+#reboot
